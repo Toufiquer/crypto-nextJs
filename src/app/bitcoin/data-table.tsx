@@ -67,7 +67,7 @@ export function DataTableDemo() {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full text-xs">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter ..."
@@ -106,7 +106,7 @@ export function DataTableDemo() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <div className="rounded-md border  text-xs">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -130,6 +130,7 @@ export function DataTableDemo() {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
+                  className=" text-xs my-0"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -156,8 +157,8 @@ export function DataTableDemo() {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
+      <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-start w-full text-sm text-muted-foreground">
           <div className="text-slate-200 px-2">Total item: {data.length}</div>
           <div className="text-slate-200 px-2">
             Total Page: {table.getPageCount()}
@@ -170,7 +171,7 @@ export function DataTableDemo() {
             </strong>
           </div>
         </div>
-        <div className="space-x-2">
+        <div className="flex items-center justify-center gap-2">
           <Button
             className=" text-slate-800"
             variant="outline"
